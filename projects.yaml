@@ -1,0 +1,6 @@
+apiVersion: project.openshift.io/v1
+description: "My first OpenShift"
+displayName: my-first-openshift
+kind: ProjectRequest
+metadata:
+    name: my-first-openshift

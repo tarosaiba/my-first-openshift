@@ -1,0 +1,27 @@
+apiVersion: tekton.dev/v1beta1
+kind: Pipeline
+metadata:
+  name: ci-build-app
+spec:
+  params:
+    - name: contextDir
+      description: the context directory from where to build the application
+  resources:
+    - name: appSource
+      type: git
+    - name: appImage
+      type: image
+  tasks:
+    - name: build-service-a
+      taskRef:
+        name: build-app
+      params:
+        - name: contextDir
+          value: $(params.contextDir)
+      resources:
+        inputs:
+          - name: source
+            resource: appSource
+        outputs:
+          - name: builtImage
+            resource: appImage

@@ -1,6 +1,27 @@
 apiVersion: project.openshift.io/v1
-description: "My first OpenShift"
-displayName: my-first-openshift
+description: "My first OpenShift Common"
+displayName: my-first-openshift-common
 kind: ProjectRequest
 metadata:
-    name: my-first-openshift
+    name: my-first-openshift-common
+
+apiVersion: project.openshift.io/v1
+description: "My first OpenShift Development"
+displayName: my-first-openshift-dev
+kind: ProjectRequest
+metadata:
+    name: my-first-openshift-dev
+
+apiVersion: project.openshift.io/v1
+description: "My first OpenShift Staging"
+displayName: my-first-openshift-stg
+kind: ProjectRequest
+metadata:
+    name: my-first-openshift-stg
+
+apiVersion: project.openshift.io/v1
+description: "My first OpenShift Production"
+displayName: my-first-openshift-prod
+kind: ProjectRequest
+metadata:
+    name: my-first-opensift-prod

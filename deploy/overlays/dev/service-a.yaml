@@ -1,0 +1,11 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-a
+  annotations:
+    argocd.argoproj.io/sync-wave: "5"
+    argocd.argoproj.io/sync-options: Replace=true
+spec:
+  replicas: 1
+  revisionHistoryLimit: 5

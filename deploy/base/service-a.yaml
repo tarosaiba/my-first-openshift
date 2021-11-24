@@ -1,7 +1,25 @@
+##################################################################################################
+# My Service A
+##################################################################################################
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-a
+  labels:
+    app: service-a
+    service: service-a
+spec:
+  ports:
+  - port: 8080
+    name: http
+  selector:
+    app: service-a
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deployment-service-a
+  name: service-a
   labels:
     app: service-a
 spec:

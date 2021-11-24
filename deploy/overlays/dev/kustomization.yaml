@@ -1,0 +1,18 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+commonLabels:
+  app.kubernetes.io/env: dev
+  app.kubernetes.io/managed-by: kustomize
+namespace: prod
+
+images:
+- digest: sha256:f0d510e9175b35f4d99f3707ac5888f3a3105e5e7cba1b33ec5e5fad18eff65b
+  name: ___IMAGE_URL___@___IMAGE_DIGEST___
+  newName: registry.gitlab.com/cloudnative_impress/bookinfo/reviews
+
+resources:
+- ../../base
+
+patchesStrategicMerge:
+- service-a.yaml

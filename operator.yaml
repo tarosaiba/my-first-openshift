@@ -1,27 +1,28 @@
-# TODO: want to install operator via CLI not console
+# OpenShift Pipelines
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: openshift-pipelines-operator-rh
+  namespace: openshift-operators
+spec:
+  channel: stable
+  installPlanApproval: Automatic
+  name: openshift-pipelines-operator-rh
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
+  startingCSV: redhat-openshift-pipelines.v1.4.1
 
 ---
-# Mongo
-# ## Operator group
-# apiVersion: operators.coreos.com/v1
-# kind: OperatorGroup
-# metadata:
-#   name: mongo
-#   namespace: my-first-openshift
-# spec:
-#   targetNamespaces:
-#   - my-first-openshift
-
-# apiVersion: operators.coreos.com/v1alpha1
-# kind: Subscription
-# metadata:
-#   name: cloud-native-postgresql
-# #  namespace: my-first-openshift
-#   namespace: install-test
-# spec:
-#   channel: stable
-#   installPlanApproval: Automatic
-#   name: cloud-native-postgresql
-#   source: redhat-operators
-#   sourceNamespace: openshift-marketplace
-#   startingCSV: cloud-native-postgresql.v1.10.0
+# Argo CD
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: argocd-operator
+  namespace: openshift-operators
+spec:
+  channel: alpha
+  installPlanApproval: Automatic
+  name: argocd-operator
+  source: community-operators
+  sourceNamespace: openshift-marketplace
+  startingCSV: argocd-operator.v0.0.15

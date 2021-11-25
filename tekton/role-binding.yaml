@@ -1,2 +1,2 @@
-# oc adm policy add-scc-to-user privileged -nmy-first-openshift -z pipeline
+# oc adm policy add-scc-to-user privileged -nmy-first-openshift-common -z pipeline
 # これをyamlでかきたい

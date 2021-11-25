@@ -2,10 +2,12 @@ apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
   name: ci-build-app
+  namespace: my-first-openshift-common
 spec:
   params:
     - name: contextDir
       description: the context directory from where to build the application
+      default: .
   resources:
     - name: appSource
       type: git

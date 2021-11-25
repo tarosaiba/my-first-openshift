@@ -2,6 +2,7 @@ apiVersion: tekton.dev/v1alpha1
 kind: PipelineResource
 metadata:
   name: git-source
+  namespace: my-first-openshift-common
 spec:
   type: git
   params:
@@ -9,6 +10,7 @@ spec:
       value: https://github.com/tarosaiba/my-first-openshift-service-a.git
     - name: revision
       value: master
+
 ---
 apiVersion: tekton.dev/v1alpha1
 kind: PipelineResource
@@ -18,4 +20,4 @@ spec:
   type: image
   params:
     - name: url
-      value: "image-registry.openshift-image-registry.svc:5000/my-first-openshift/service-a"
+      value: "image-registry.openshift-image-registry.svc:5000/my-first-openshift-common/service-a"

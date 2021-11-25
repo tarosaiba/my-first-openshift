@@ -21,18 +21,21 @@
 
 # Setup your CRC (CodeReady Container)
 
+* Login
+```
 oc login -u developer https://api.crc.testing:6443
 https://console-openshift-console.apps-crc.testing
+```
 
-*  Install Operator
+* Create Project
 ```
 oc apply -f projects.yaml
 ```
 
-*  Install Operator
+*  Install Operator (to all namespaces /Tekton&ArgoCD)
     - ※It looks this command didn't work. We should install with the console rather.
 ```
-[ssaiba:~/github/my-first-openshift]$ oc apply -f sub.yaml
+$ oc apply -f operator.yaml
 subscription.operators.coreos.com/openshift-pipelines-operator created
 ```
 

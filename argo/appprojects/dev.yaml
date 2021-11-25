@@ -2,11 +2,11 @@ apiVersion: argoproj.io/v1alpha1
 kind: AppProject
 metadata:
   name: dev
-  namespace: my-first-openshift-dev
+  namespace: openshift-gitops
 spec:
   description: Development Environment
   destinations:
-  - namespace: my-openshift-dev
+  - namespace: my-first-openshift-dev
     server: https://kubernetes.default.svc
   namespaceResourceBlacklist:
   - group: tekton.dev

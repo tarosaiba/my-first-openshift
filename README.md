@@ -56,3 +56,8 @@ https://github.com/openshift/pipelines-tutorial#install-openshift-pipelines
 * TEKTON: Service accountの権限を絞る
 
 
+# MEMO
+* ArgoCDのログイン admin
+```
+kubectl -n openshift-gitops get secret openshift-gitops-cluster -o 'go-template={{index .data "admin.password"}}' | base64 -d
+```

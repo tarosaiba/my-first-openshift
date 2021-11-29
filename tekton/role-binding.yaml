@@ -1,5 +1,21 @@
+# SCC Privileged
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: system:openshift:scc:privileged
+  namespace: my-first-openshift-common
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: system:openshift:scc:privileged
+subjects:
+- kind: ServiceAccount
+  name: pipeline
+  namespace: my-first-openshift-common
+
 # Allows pulls from internal registry.
-# means: oc policy add-role-to-user system:image-puller system:serviceaccount:my-first-openshift-dev:default -n my-first-openshift-dev
+---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:

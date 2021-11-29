@@ -21,4 +21,4 @@ patchesStrategicMerge:
 - lb.yaml
 - service-a.yaml
 - web.yaml
-- postgresql.yaml
+- postgres.yaml

@@ -18,6 +18,7 @@ resources:
 - ../../base
 
 patchesStrategicMerge:
+- lb.yaml
 - service-a.yaml
 - web.yaml
 - postgresql.yaml

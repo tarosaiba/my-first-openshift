@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - service-a.yaml
   - web.yaml
+  - postgresql.yaml

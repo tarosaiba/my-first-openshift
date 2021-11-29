@@ -20,3 +20,4 @@ resources:
 patchesStrategicMerge:
 - service-a.yaml
 - web.yaml
+- postgresql.yaml

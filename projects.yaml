@@ -28,4 +28,4 @@ description: "My first OpenShift Production"
 displayName: my-first-openshift-prod
 kind: ProjectRequest
 metadata:
-    name: my-first-opensift-prod
+    name: my-first-openshift-prod

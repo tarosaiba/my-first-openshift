@@ -1,29 +1,2 @@
-
 # TODO: want to install operator via CLI not console
---- 
 
----
-# Mongo
-# ## Operator group
-# apiVersion: operators.coreos.com/v1
-# kind: OperatorGroup
-# metadata:
-#   name: mongo
-#   namespace: my-first-openshift
-# spec:
-#   targetNamespaces:
-#   - my-first-openshift
-
-# apiVersion: operators.coreos.com/v1alpha1
-# kind: Subscription
-# metadata:
-#   name: cloud-native-postgresql
-# #  namespace: my-first-openshift
-#   namespace: install-test
-# spec:
-#   channel: stable
-#   installPlanApproval: Automatic
-#   name: cloud-native-postgresql
-#   source: redhat-operators
-#   sourceNamespace: openshift-marketplace
-#   startingCSV: cloud-native-postgresql.v1.10.0

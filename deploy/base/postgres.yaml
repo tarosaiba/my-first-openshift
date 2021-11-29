@@ -71,16 +71,14 @@ spec:
         livenessProbe:
           exec:
             command:
-            - /usr/libexec/check-container
-            - --live
-          initialDelaySeconds: 120
-          timeoutSeconds: 10
-        readinessProbe:
-          exec:
-            command:
-            - /usr/libexec/check-container
-          initialDelaySeconds: 5
-          timeoutSeconds: 1
+            - /bin/sh
+            - -c
+            - exec pg_isready -U "postgres" -h 127.0.0.1 -p 5432
+          failureThreshold: 6
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          successThreshold: 1
+          timeoutSeconds: 5
         resources:
           limits:
             memory: 512Mi

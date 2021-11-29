@@ -1,18 +1,18 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: my-first-openshift-dev
+  name: my-first-openshift-prod
   namespace: openshift-gitops
   labels:
-    environment: dev
+    environment: prod
 spec:
   project: my-first-openshift
   destination:
-    namespace: my-first-openshift-dev
+    namespace: my-first-openshift-prod
     server: https://kubernetes.default.svc
   source:
     kustomize:
-    path: deploy/overlays/dev
+    path: deploy/overlays/prod
     repoURL: https://github.com/tarosaiba/my-first-openshift.git
     targetRevision: master
   syncPolicy:

@@ -1,0 +1,16 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: lb-api
+  labels:
+    app: service-a
+    service: service-a
+spec:
+  host: api.apps-crc.testing
+  to:
+    kind: Service
+    name: service-a
+    weight: 100
+  port:
+    targetPort: http
+  wildcardPolicy: None

@@ -6,8 +6,17 @@ commonLabels:
   app.kubernetes.io/managed-by: kustomize
 namespace: my-first-openshift-dev
 
+images:
+  - name: image-registry.openshift-image-registry.svc:5000/my-first-openshift-common/service-a:latest
+    newName: image-registry.openshift-image-registry.svc:5000/my-first-openshift-common/service-a
+    newTag: latest
+  - name: nginx:1.14.2
+    newName: nginx
+    newTag: 1.14.2
+
 resources:
 - ../../base
 
 patchesStrategicMerge:
 - service-a.yaml
+- web.yaml

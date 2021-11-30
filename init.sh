@@ -4,4 +4,5 @@ oc create -f operator.yaml
 oc create -f default-scc.yaml
 oc create -f tekton
 oc create -f argo
-kubectl -n openshift-gitops get secret openshift-gitops-cluster -o 'go-template={{index .data "admin.password"}}' | base64 -d 
+echo "Argo admin pass: "
+kubectl -n openshift-gitops get secret openshift-gitops-cluster -o 'go-template={{index .data "admin.password"}}' | base64 -d

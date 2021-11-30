@@ -6,7 +6,6 @@ metadata:
     app: service-a
     service: service-a
 spec:
-  host: api.apps-crc.testing
   to:
     kind: Service
     name: service-a

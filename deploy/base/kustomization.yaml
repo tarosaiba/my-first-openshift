@@ -6,3 +6,4 @@ resources:
   - service-a.yaml
   - web.yaml
   - postgres.yaml
+  - loadtest.yaml

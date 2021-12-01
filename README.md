@@ -61,3 +61,12 @@ https://github.com/openshift/pipelines-tutorial#install-openshift-pipelines
 ```
 kubectl -n openshift-gitops get secret openshift-gitops-cluster -o 'go-template={{index .data "admin.password"}}' | base64 -d
 ```
+
+
+# Mongo Install
+```
+kubectl -n openshift-operators \
+  create secret generic mongo-enterprise \
+  --from-literal="publicKey=crigsydx" \
+  --from-literal="privateKey=b75ac604-fbf2-49f7-aed6-1543adcef9a2"
+```

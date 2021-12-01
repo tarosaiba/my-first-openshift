@@ -1,0 +1,21 @@
+---
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: image-service-a
+spec:
+  type: image
+  params:
+    - name: url
+      value: "image-registry.openshift-image-registry.svc:5000/my-first-openshift-common/service-a"
+
+---
+apiVersion: tekton.dev/v1alpha1
+kind: PipelineResource
+metadata:
+  name: image-service-b
+spec:
+  type: image
+  params:
+    - name: url
+      value: "image-registry.openshift-image-registry.svc:5000/my-first-openshift-common/service-b"

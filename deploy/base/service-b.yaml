@@ -44,7 +44,7 @@ spec:
           value: "bezkoder_db"
         - name: DB_USER
           value: "root"
-        - name: PG_PASSWORD
+        - name: DB_PASSWORD
           valueFrom:
             secretKeyRef:
               name: mongo

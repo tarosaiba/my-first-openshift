@@ -1,7 +1,8 @@
 apiVersion: tekton.dev/v1beta1
+
 kind: Pipeline
 metadata:
-  name: ci-build-app
+  name: ci-pipeline-services
   namespace: my-first-openshift-common
 spec:
   resources:
@@ -10,9 +11,9 @@ spec:
     - name: appImage
       type: image
   tasks:
-    - name: build-service-a
+    - name: build-and-push-app
       taskRef:
-        name: build-app
+        name: build-and-push-app
       params:
         - name: contextDir
           value: "."

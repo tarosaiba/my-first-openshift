@@ -4,7 +4,7 @@ kind: Secret
 metadata:
   name: mongo
 stringData:
-  database-password: P@assw0rd!
+  database-password: Passw0rd
 
 ---
 apiVersion: v1

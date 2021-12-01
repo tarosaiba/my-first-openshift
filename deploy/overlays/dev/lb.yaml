@@ -1,3 +1,4 @@
+---
 kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
@@ -5,6 +6,18 @@ metadata:
   labels:
     app: service-a
     service: service-a
+  annotations:
+    argocd.argoproj.io/sync-wave: "5"
+    argocd.argoproj.io/sync-options: Replace=true
+
+---
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: lb-api-b
+  labels:
+    app: service-b
+    service: service-b
   annotations:
     argocd.argoproj.io/sync-wave: "5"
     argocd.argoproj.io/sync-options: Replace=true

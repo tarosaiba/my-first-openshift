@@ -4,6 +4,8 @@ kind: Kustomization
 resources:
   - lb.yaml
   - service-a.yaml
-  - web.yaml
   - postgres.yaml
+  - service-b.yaml
+  - mongo.yaml
+  - web.yaml
   - loadtest.yaml

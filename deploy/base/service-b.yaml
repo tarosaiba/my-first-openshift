@@ -1,0 +1,51 @@
+##################################################################################################
+# My Service B
+##################################################################################################
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-b
+  labels:
+    app: service-b
+    service: service-b
+spec:
+  ports:
+  - port: 8080
+    name: http
+  selector:
+    app: service-b
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: service-b
+  labels:
+    app: service-b
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: service-b
+  template:
+    metadata:
+      labels:
+        app: service-b
+    spec:
+      containers:
+      - name: service-b
+        image: image-registry.openshift-image-registry.svc:5000/my-first-openshift-common/service-b:latest
+        ports:
+        - containerPort: 8080
+        env:
+        - name: DB_HOST
+          value: "mongo"
+        - name: DB_NAME
+          value: "bezkoder_db"
+        - name: DB_USER
+          value: "root"
+        - name: PG_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mongo
+              key: database-password

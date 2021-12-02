@@ -4,7 +4,7 @@ kind: Secret
 metadata:
   name: mongo
 stringData:
-  database-password: Passw0rd
+  database-password: 123456
 
 ---
 apiVersion: v1
@@ -59,8 +59,6 @@ spec:
         - containerPort: 27017
           protocol: TCP
         env:
-        - name: MONGODB_DATABASE
-          value: bezkoder_db
         - name: MONGO_INITDB_ROOT_USERNAME
           value: root
         - name: MONGO_INITDB_ROOT_PASSWORD

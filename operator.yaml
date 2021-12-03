@@ -52,11 +52,12 @@ metadata:
   name: "elasticsearch-operator"
   namespace: "openshift-operators-redhat"
 spec:
-  channel: "4.6"
-  installPlanApproval: "Automatic"
-  source: "redhat-operators"
-  sourceNamespace: "openshift-marketplace"
-  name: "elasticsearch-operator"
+  channel: stable-5.2
+  installPlanApproval: Automatic
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
+  name: elasticsearch-operator
+
 
 # Logging (Namespace + Operator group + Subscription)
 ---
@@ -84,7 +85,7 @@ metadata:
   name: cluster-logging
   namespace: openshift-logging
 spec:
-  channel: "4.6"
+  channel: stable-5.2
   name: cluster-logging
   source: redhat-operators
   sourceNamespace: openshift-marketplace

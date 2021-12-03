@@ -1,3 +1,4 @@
+# Pipelines
 ---
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
@@ -12,6 +13,7 @@ spec:
   sourceNamespace: openshift-marketplace
   startingCSV: redhat-openshift-pipelines.v1.4.1
 
+# GitOps
 ---
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
@@ -25,3 +27,64 @@ spec:
   source: redhat-operators
   sourceNamespace: openshift-marketplace
   startingCSV: openshift-gitops-operator.v1.3.1
+
+# Elasticsearch (Namespace + Operator group + Subscription)
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: openshift-operators-redhat
+  annotations:
+    openshift.io/node-selector: ""
+  labels:
+    openshift.io/cluster-monitoring: "true"
+---
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: openshift-operators-redhat
+  namespace: openshift-operators-redhat
+spec: {}
+---
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: "elasticsearch-operator"
+  namespace: "openshift-operators-redhat"
+spec:
+  channel: "4.6"
+  installPlanApproval: "Automatic"
+  source: "redhat-operators"
+  sourceNamespace: "openshift-marketplace"
+  name: "elasticsearch-operator"
+
+# Logging (Namespace + Operator group + Subscription)
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: openshift-logging
+  annotations:
+    openshift.io/node-selector: ""
+  labels:
+    openshift.io/cluster-monitoring: "true"
+---
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: cluster-logging
+  namespace: openshift-logging
+spec:
+  targetNamespaces:
+  - openshift-logging
+---
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: cluster-logging
+  namespace: openshift-logging
+spec:
+  channel: "4.6"
+  name: cluster-logging
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace

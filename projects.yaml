@@ -1,3 +1,18 @@
+###################################################
+# +++ My first OpenShift +++
+#
+# This yaml includes:
+#   - Common project
+#      + ProjectRequest
+#   - Development project
+#      + ProjectRequest
+#   - Staging project
+#      + ProjectRequest
+#   - Production project
+#      + ProjectRequest
+#
+####################################################
+
 ---
 apiVersion: project.openshift.io/v1
 description: "My first OpenShift Common"

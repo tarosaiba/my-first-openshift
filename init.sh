@@ -2,12 +2,12 @@
 oc create -f projects.yaml
 oc create -f operator.yaml
 oc create -f default-scc.yaml
-oc create -f tekton
-oc create -f argo
 
 echo "please wait 60sec.."
 sleep 60
 
+oc create -f tekton
+oc create -f argo
 
 #  # TODO: run pipelines
 #  echo "apiVersion: tekton.dev/v1beta1

@@ -8,6 +8,7 @@ sleep 180
 
 oc create -f tekton
 oc create -f argo
+oc create -f logging
 
 # Run Pipelines
 SUFFIX=`date +"%y%m%d-%H-%M-%S"`

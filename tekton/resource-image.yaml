@@ -3,6 +3,7 @@ apiVersion: tekton.dev/v1alpha1
 kind: PipelineResource
 metadata:
   name: image-service-a
+  namespace: my-first-openshift-common
 spec:
   type: image
   params:
@@ -14,6 +15,7 @@ apiVersion: tekton.dev/v1alpha1
 kind: PipelineResource
 metadata:
   name: image-service-b
+  namespace: my-first-openshift-common
 spec:
   type: image
   params:

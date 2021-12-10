@@ -17,47 +17,72 @@ service="service-a"
 echo "apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:
-  name: ci-pipeline-${service}-${SUFFIX}
+  name: build-app-${service}-${SUFFIX}
   namespace: my-first-openshift-common
   labels:
-    tekton.dev/pipeline: ci-pipeline-services
+    tekton.dev/pipeline: build-app
 spec:
   pipelineRef:
-    name: ci-pipeline-services
-  resources:
-    - name: appSource
-      resourceRef:
-        name: git-${service}
-    - name: appImage
-      resourceRef:
-        name: image-${service}
+    name: build-app
+  params:
+    - name: target-app
+      value: ${service}
+    - name: imageurl
+      value: >-
+        image-registry.openshift-image-registry.svc:5000/my-first-openshift-common
+    - name: app-url
+      value: 'https://github.com/tarosaiba/my-first-openshift-${service}.git'
+    - name: app-revision
+      value: master
+  pipelineRef:
+    name: build-app
   serviceAccountName: pipeline
+  timeout: 1h0m0s
+  workspaces:
+    - name: app-code
+      persistentVolumeClaim:
+        claimName: workspace-small
+    - emptyDir: {}
+      name: vul-cache
   timeout: 1h0m0s
 " | oc create -f -
 
 ## service-b
-service="service-b"
+SUFFIX=`date +"%y%m%d-%H-%M-%S"`
+## service-a
+service="service-a"
 echo "apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:
-  name: ci-pipeline-${service}-${SUFFIX}
+  name: build-app-${service}-${SUFFIX}
   namespace: my-first-openshift-common
   labels:
-    tekton.dev/pipeline: ci-pipeline-services
+    tekton.dev/pipeline: build-app
 spec:
   pipelineRef:
-    name: ci-pipeline-services
-  resources:
-    - name: appSource
-      resourceRef:
-        name: git-${service}
-    - name: appImage
-      resourceRef:
-        name: image-${service}
+    name: build-app
+  params:
+    - name: target-app
+      value: ${service}
+    - name: imageurl
+      value: >-
+        image-registry.openshift-image-registry.svc:5000/my-first-openshift-common
+    - name: app-url
+      value: 'https://github.com/tarosaiba/my-first-openshift-${service}.git'
+    - name: app-revision
+      value: master
+  pipelineRef:
+    name: build-app
   serviceAccountName: pipeline
   timeout: 1h0m0s
+  workspaces:
+    - name: app-code
+      persistentVolumeClaim:
+        claimName: workspace-small
+    - emptyDir: {}
+      name: vul-cache
+  timeout: 1h0m0s
 " | oc create -f -
-
 
 echo "Argo admin pass: "
 kubectl -n openshift-gitops get secret openshift-gitops-cluster -o 'go-template={{index .data "admin.password"}}' | base64 -d

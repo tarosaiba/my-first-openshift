@@ -15,7 +15,7 @@ spec:
     description: Target application in Apps (eg. service-a)
   - name: imageurl
     type: string
-    description: Target container registry URL (eg. image-registry.openshift-image-registry.svc:5000/)
+    description: Target container registry URL (eg. image-registry.openshift-image-registry.svc:5000/my-first-openshift-common)
   - name: app-url
     type: string
     description: Git Repo URL for Apps (eg. https://github.com/tarosaiba/my-first-openshift-service-a.git)
@@ -38,7 +38,7 @@ spec:
 
   - name: build-container
     taskRef:
-      name: kaniko
+      name: buildah
     runAfter:
     - git-clone
     workspaces:
@@ -47,11 +47,8 @@ spec:
     params:
     - name: IMAGE
       value: $(params.imageurl)/$(params.target-app):$(params.app-revision)
-    - name: CONTEXT
-      value: $(params.target-app)/reviews-wlpcfg
-    - name: BUILDER_IMAGE
-      value: gcr.io/kaniko-project/executor@sha256:b9eec410fa32cd77cdb7685c70f86a96debb8b087e77e63d7fe37eaadb178709
-      ##  description: kaniko v1.3.0
+    - name: TLSVERIFY
+      value: "false"
 
   - name: test-container
     taskRef:
@@ -65,4 +62,4 @@ spec:
     - name: IMAGE
       value: $(params.imageurl)/$(params.target-app)
     - name: IMAGE_DIGEST
-      value: $(tasks.build-container.results.IMAGE-DIGEST)
+      value: $(tasks.build-container.results.IMAGE_DIGEST)

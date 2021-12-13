@@ -21,16 +21,27 @@ Key tech stacks are:
 
 ### Application / Middleware layer
 
-| Component                | Stack                           | Deployment                   |
-|--------------------------|---------------------------------|------------------------------|
-| Front end                | [React](https://reactjs.org/)   | -                            |
-| Load balancer            | -                               | OpenShift resource           |
-| Backend / Batch / Worker | [Go](https://go.dev/) / Node.js | k8s Deployment               |
-| RDB                      | Postgres                        | Operator (Dev4Dev)           |
-| Document DB              | MongoDB                         | OpenShift Operator (Dev4Dev) |
-| Object Storage           | MinIO                           | OpenShift Operator (Dev4Dev) |
-| Queueing                 | Kafka                           | OpenShift Operator (Dev4Dev) |
-| Workflow                 | Airflow                         | ??                           |
+| Component                | Stack                                                  | Deployment                                                                                                         |
+|--------------------------|--------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------|
+| Front end                | [React](https://reactjs.org/)                          | -                                                                                                                  |
+| Load balancer            | -                                                      | OpenShift resource                                                                                                 |
+| Backend / Batch / Worker | [Go](https://go.dev/) / [Node.js](https://nodejs.org/) | k8s Deployment                                                                                                     |
+| RDB                      | [Postgres](https://www.postgresql.org/)                | [Crunchy PostgreSQL Operator](https://catalog.redhat.com/software/operators/detail/5e9872b23f398525a0ceafc6)       |
+| Document DB              | [MongoDB](https://www.mongodb.com/)                    | [MongoDB Enterprise Kubernetes](https://catalog.redhat.com/software/operators/detail/5e9872923f398525a0ceafba)     |
+| Object Storage           | [MinIO](https://min.io/)                               | [MinIO Hybrid Cloud Object Storage](https://catalog.redhat.com/software/operators/detail/60945b58d3f6d18cdbac26fe) |
+| Queueing                 | [Kafka](https://kafka.apache.org/)                     | [AMQ Streams](https://catalog.redhat.com/software/operators/detail/5ef20efd46bc301a95a1e9a4)                       |
+| Workflow                 | [Airflow](https://airflow.apache.org/)                 | -                                                                                                                  |
+
+### DevOps
+
+| Component    | Stack                                                                                                                     | Deployment                                                                                                                      |
+|--------------|---------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------|
+| Service mesh | [Istio](https://istio.io/)                                                                                                | [Red Hat OpenShift Service Mesh](https://catalog.redhat.com/software/operators/detail/5ec53e8c110f56bd24f2ddc4)                 |
+| Tracing      | [Jaeger](https://www.jaegertracing.io/) /                                                                                 | [Red Hat OpenShift distributed tracing platform](https://catalog.redhat.com/software/operators/detail/5ec54a5c78e79e6a879fa271) |
+| Monitoring   | [Prometheus](https://prometheus.io/) / [Grafana](https://grafana.com/)                                                    | -                                                                                                                               |
+| Logging      | [Elasticsearch](https://www.elastic.co/) / [Fluentd](https://www.fluentd.org/) / [Kibana](https://www.elastic.co/kibana/) | -                                                                                                                               |
+| CI           | [Tekton](https://tekton.dev/)                                                                                             | [RedHat OpenShift Pipelines](https://catalog.redhat.com/software/operators/detail/5ec54a4628834587a6b85ca5)                     |
+| CD           | [ArgoCD](https://argoproj.github.io/cd/)                                                                                  | [Red Hat OpenShift GitOps](https://catalog.redhat.com/software/operators/detail/5fb288c70a12d20cbecc6056)                       |
 
 
 ## Resources

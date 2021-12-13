@@ -1,9 +1,29 @@
-# My first OpensShift
+# My first OpensShift (OpenShift Reference Architecture)
 
-* I aim to create reference architecture for OpenShift.
+The My first OpenShift is a OpenShift reference architecture. This provides a set of manifest files for deploying microservices to OpenShift cluster with devops tools.
+You can deploy with only few steps with `init.sh` script.
 
+## Requirements
+* OpenShift >= 4.x
+* oc client >= x.x
 
-# Repository structure
+## Quick Start
+
+* Clone or download this repository
+* Go inside of directory, cd `my-first-openshift`
+* Run this command `./init.sh`
+
+## Overview
+
+![Overview](./docs/images/overview.png)
+
+## Resources
+
+![Resources](./docs/images/resources.png)
+
+## Repository structure
+This reference architecture is composed of several GitHub repository.
+
 ```
 # My First OpenShift
   -- Infrastructure
@@ -19,7 +39,7 @@
   * Worker
 ```
 
-# Setup your CRC (CodeReady Container)
+## Setup your CRC (CodeReady Container)
 
 * Login
 ```
@@ -40,6 +60,9 @@ subscription.operators.coreos.com/openshift-pipelines-operator created
 ```
 
 [Installing the Red Hat OpenShift Pipelines Operator in web console](https://docs.openshift.com/container-platform/4.7/cicd/pipelines/installing-pipelines.html)
+
+## 
+
 
 # Reference
 https://github.com/openshift/pipelines-tutorial#install-openshift-pipelines

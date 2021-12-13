@@ -17,6 +17,22 @@ You can deploy with only few steps with `init.sh` script.
 
 ![Overview](./docs/images/overview.png)
 
+Key tech stacks are:
+
+### Application / Middleware layer
+
+| Component                | Stack                           | Deployment                   |
+|--------------------------|---------------------------------|------------------------------|
+| Front end                | [React](https://reactjs.org/)   | -                            |
+| Load balancer            | -                               | OpenShift resource           |
+| Backend / Batch / Worker | [Go](https://go.dev/) / Node.js | k8s Deployment               |
+| RDB                      | Postgres                        | Operator (Dev4Dev)           |
+| Document DB              | MongoDB                         | OpenShift Operator (Dev4Dev) |
+| Object Storage           | MinIO                           | OpenShift Operator (Dev4Dev) |
+| Queueing                 | Kafka                           | OpenShift Operator (Dev4Dev) |
+| Workflow                 | Airflow                         | ??                           |
+
+
 ## Resources
 
 ![Resources](./docs/images/resources.png)

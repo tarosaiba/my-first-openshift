@@ -66,6 +66,19 @@ This reference architecture is composed of several GitHub repository.
   * Worker
 ```
 
+
+## Screenshots
+
+![Topology](./docs/images/screenshot-topology.png)
+![Pod](./docs/images/screenshot-pod.png)
+![Pipeline](./docs/images/screenshot-pipeline.png)
+![GitOps](./docs/images/screenshot-argo-1.png)
+![GitOps](./docs/images/screenshot-argo-2.png)
+
+
+
+
+
 ## Setup your CRC (CodeReady Container)
 
 * Login

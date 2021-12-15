@@ -6,7 +6,7 @@ oc create -f operator.yaml
 echo "please wait 180sec.."
 sleep 180
 
-oc create -f tekton
+oc create -f tekton-v2
 oc create -f argo
 oc create -f logging
 

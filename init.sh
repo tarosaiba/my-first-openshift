@@ -1,5 +1,11 @@
 #!bin/bash
+
 oc create -f projects.yaml
+
+
+oc adm policy remove-cluster-role-from-group self-provisioner system:authenticated:oauth
+oc create -f auth
+
 oc create -f default-scc.yaml
 oc create -f operator.yaml
 

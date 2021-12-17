@@ -1,0 +1,45 @@
+---
+apiVersion: user.openshift.io/v1
+kind: Group
+metadata:
+  name: administrator
+users:
+  - admin
+  - shuntaro
+  - tony
+
+---
+apiVersion: user.openshift.io/v1
+kind: Group
+metadata:
+  name: my-first-openshift-operator
+users:
+  - ronnie
+  - lucky
+  - roseann
+  - deana
+  - jayce
+
+---
+apiVersion: user.openshift.io/v1
+kind: Group
+metadata:
+  name: my-first-openshift-qa
+users:
+  - anastasia
+  - byron
+  - suellen
+  - roddy
+  - netta
+
+---
+apiVersion: user.openshift.io/v1
+kind: Group
+metadata:
+  name: my-first-openshift-developer
+users:
+  - merrilyn
+  - leola
+  - wolfe
+  - ewart
+  - keara

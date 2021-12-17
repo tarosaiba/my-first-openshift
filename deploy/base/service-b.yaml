@@ -34,7 +34,7 @@ spec:
     spec:
       containers:
       - name: service-b
-        image: image-registry.openshift-image-registry.svc:5000/my-first-openshift-common/service-b:latest
+        image: image-registry.openshift-image-registry.svc:5000/my-first-openshift-common/service-b:master
         ports:
         - containerPort: 8080
         env:

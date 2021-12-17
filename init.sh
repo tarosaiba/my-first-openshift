@@ -55,8 +55,8 @@ spec:
 
 ## service-b
 SUFFIX=`date +"%y%m%d-%H-%M-%S"`
-## service-a
-service="service-a"
+## service-b
+service="service-b"
 echo "apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:

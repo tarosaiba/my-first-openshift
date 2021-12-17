@@ -89,6 +89,7 @@ spec:
           capabilities: {}
           privileged: false
         terminationMessagePath: /dev/termination-log
+      serviceAccountName: privileged-app
       dnsPolicy: ClusterFirst
       restartPolicy: Always
       volumes:

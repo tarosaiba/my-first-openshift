@@ -55,3 +55,4 @@ spec:
             secretKeyRef:
               name: postgres
               key: database-password
+      serviceAccountName: privileged-app

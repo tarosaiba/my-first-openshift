@@ -49,3 +49,4 @@ spec:
             secretKeyRef:
               name: mongo
               key: database-password
+      serviceAccountName: privileged-app

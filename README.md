@@ -60,7 +60,7 @@ Key tech stacks are:
 
 ## OpenShift Detail Design
 * [1.Projects(Namespace)]()
-* [2.Security]()
+* [2.Security](./docs/openshift-design/security.md)
     - 2.1. RBAC
         + User/Group
         + Service account

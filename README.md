@@ -48,6 +48,36 @@ Key tech stacks are:
 
 ![Resources](./docs/images/resources.png)
 
+## Architecture Design
+* [Requirements]()
+    - functional
+    - non-functional
+* [Design points]()
+    - descion of tech stack
+    - micro service
+* [Logical architecture diagram]()
+* [Physical architecture diagram]()
+
+## OpenShift Detail Design
+* [1.Projects(Namespace)]()
+* [2.Security]()
+    - 2.1. RBAC
+        + User/Group
+        + Service account
+    - 2.2. SCC
+* [3.Network]()
+    - 3.1. Network policy
+    - 3.2. External access
+* [4.Pod scheduling]()
+
+## CI/CD Design
+* [1. Branch stragtegy]()
+    - 1.1 Application
+    - 1.2 Infrastrucutre
+* [2. Tekton Pipeline Design]()
+* [3. Argo CD Setting]()
+
+
 ## Repository structure
 This reference architecture is composed of several GitHub repository.
 

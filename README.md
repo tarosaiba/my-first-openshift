@@ -65,7 +65,7 @@ Key tech stacks are:
         + User/Group
         + Service account
     - 2.2. SCC
-* [3.Network]()
+* [3.Network](./docs/openshift-design/network.md)
     - 3.1. Network policy
     - 3.2. External access
 * [4.Pod scheduling]()

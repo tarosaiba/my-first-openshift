@@ -3,6 +3,7 @@ kind: Kustomization
 
 resources:
   - sa.yaml
+  - network-policy.yaml
   - lb.yaml
   - service-a.yaml
   - postgres.yaml

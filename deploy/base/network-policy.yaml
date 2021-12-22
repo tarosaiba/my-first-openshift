@@ -1,0 +1,68 @@
+# Namespace Level
+## deny-other-namespaces
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: deny-other-namespaces
+  namespace: my-first-openshift-dev
+spec:
+  podSelector: {}
+  ingress:
+    - from:
+        - podSelector: {}
+  policyTypes:
+    - Ingress
+
+## allow-from-ingress-namespace
+---
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: allow-from-ingress-namespace
+spec:
+  podSelector: {}
+  ingress:
+    - from:
+        - namespaceSelector:
+            matchLabels:
+              network-policy: global
+  policyTypes:
+    - Ingress
+
+
+# Role Level
+## db
+---
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: db-allow-from-backend
+spec:
+  podSelector:
+    matchLabels:
+      role: db
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              role: backend
+  policyTypes:
+    - Ingress
+
+## backend
+---
+kind: NetworkPolicy
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: backend-allow-from-operation
+spec:
+  podSelector:
+    matchLabels:
+      role: backend
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              role: operation
+  policyTypes:
+    - Ingress

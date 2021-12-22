@@ -8,6 +8,7 @@ metadata:
   name: loadtest
   labels:
     app: loadtest
+    role: operation
 spec:
   replicas: 3
   selector:
@@ -17,6 +18,7 @@ spec:
     metadata:
       labels:
         app: loadtest
+        role: operation
     spec:
       containers:
       - name: loadtest

@@ -8,6 +8,7 @@ metadata:
   name: service-b
   labels:
     app: service-b
+    role: backend
     service: service-b
 spec:
   ports:
@@ -22,6 +23,7 @@ metadata:
   name: service-b
   labels:
     app: service-b
+    role: backend
 spec:
   replicas: 1
   selector:
@@ -31,6 +33,7 @@ spec:
     metadata:
       labels:
         app: service-b
+        role: backend
     spec:
       containers:
       - name: service-b

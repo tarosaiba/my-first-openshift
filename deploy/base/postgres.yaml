@@ -42,6 +42,7 @@ metadata:
   name: postgres
   labels:
     app: postgres
+    role: db
 spec:
   replicas: 1
   selector:
@@ -51,6 +52,7 @@ spec:
     metadata:
       labels:
         name: postgres
+        role: db
     spec:
       containers:
       - name: postgres

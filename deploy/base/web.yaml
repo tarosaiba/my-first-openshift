@@ -8,6 +8,7 @@ metadata:
   name: web
   labels:
     app: web
+    role: front
     service: web
 spec:
   ports:
@@ -22,6 +23,7 @@ metadata:
   name: web
   labels:
     app: web
+    role: front
 spec:
   replicas: 1
   selector:
@@ -31,6 +33,7 @@ spec:
     metadata:
       labels:
         app: web
+        role: front
     spec:
       containers:
       - name: web

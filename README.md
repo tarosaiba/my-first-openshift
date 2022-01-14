@@ -50,20 +50,20 @@ Key tech stacks are:
 
 ## Design documents (with lots of diagrams!😃)
 
-### (I. Architecture Design)[./test]
+### [I. Architecture Design](./test)
 1. (WIP)-Requirements
 1. (WIP)-Design points
 1. (WIP)-Logical architecture diagram
 1. (WIP)-Physical architecture diagram
 
-### (II. OpenShift Detail Design)[./test]
+### [II. OpenShift Detail Design](./test)
 1. Projects(Namespace)
 1. Security - | RBAC | Service account
 1. Network - | Network diagram | Network policy
 1. Pod scheduling - |
 1. Quotas&Limit - |
 
-### (III. CI/CD Design)[./]
+### [III. CI/CD Design](./test)
 1. Overview
 1. CI-Tekton Pipeline Design
 1. CD-Argo CD Setting

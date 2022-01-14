@@ -56,14 +56,14 @@ Key tech stacks are:
 1. (WIP)-Logical architecture diagram
 1. (WIP)-Physical architecture diagram
 
-### [II. OpenShift Detail Design](./openshift-detail-design.md)
+### [II. OpenShift Detail Design](./docs/openshift-detail-design.md)
 1. Projects(Namespace)
 1. Security - | RBAC | Service account
 1. Network - | Network diagram | Network policy
 1. Pod scheduling - |
 1. Quotas&Limit - |
 
-### [III. CI/CD Design](./test)
+### [III. CI/CD Design](./docs/cicd.md)
 1. Overview
 1. CI-Tekton Pipeline Design
 1. CD-Argo CD Setting

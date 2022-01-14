@@ -56,7 +56,7 @@ Key tech stacks are:
 1. (WIP)-Logical architecture diagram
 1. (WIP)-Physical architecture diagram
 
-### [II. OpenShift Detail Design](./test)
+### [II. OpenShift Detail Design](./openshift-detail-design.md)
 1. Projects(Namespace)
 1. Security - | RBAC | Service account
 1. Network - | Network diagram | Network policy

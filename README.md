@@ -58,10 +58,10 @@ Key tech stacks are:
 
 ### II. OpenShift Detail Design
 1. [Projects(Namespace)]()
-1. [Security](./docs/openshift-design/security.md)
-1. [Network](./docs/openshift-design/network.md)
-1. [Pod scheduling]()
-1. [Quotas&Limit]()
+1. [Security](./docs/openshift-design/security.md) - | RBAC | Service account
+1. [Network](./docs/openshift-design/network.md) - | Network diagram | Network policy
+1. [Pod scheduling]() - | 
+1. [Quotas&Limit]() - | 
 
 ### III. CI/CD Design
 1. [CI-Tekton Pipeline Design]()

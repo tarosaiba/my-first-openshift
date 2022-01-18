@@ -44,38 +44,38 @@ Key tech stacks are:
 | CD           | [ArgoCD](https://argoproj.github.io/cd/)                                                                                  | [Red Hat OpenShift GitOps](https://catalog.redhat.com/software/operators/detail/5fb288c70a12d20cbecc6056)                       |
 
 
-## Resources
+### Resources
 
 ![Resources](./docs/images/resources.png)
 
-## Architecture Design
-* [Requirements]()
-    - functional
-    - non-functional
-* [Design points]()
-    - descion of tech stack
-    - micro service
-* [Logical architecture diagram]()
-* [Physical architecture diagram]()
+## Design documents (with lots of diagrams!😃)
 
-## OpenShift Detail Design
-* [1.Projects(Namespace)]()
-* [2.Security](./docs/openshift-design/security.md)
-    - 2.1. RBAC
-        + User/Group
-        + Service account
-    - 2.2. SCC
-* [3.Network](./docs/openshift-design/network.md)
-    - 3.1. Network policy
-    - 3.2. External access
-* [4.Pod scheduling]()
+### [I. Architecture Design](./test)
+1. (WIP)-Requirements
+1. (WIP)-Design points
+1. (WIP)-Logical architecture diagram
+1. (WIP)-Physical architecture diagram
 
-## CI/CD Design
-* [1. Branch stragtegy]()
-    - 1.1 Application
-    - 1.2 Infrastrucutre
-* [2. Tekton Pipeline Design]()
-* [3. Argo CD Setting]()
+### [II. Detail Design](./docs/openshift-design/detail-design.md)
+1. Projects(Namespace)
+1. Security - | RBAC | Service account
+1. Network - | Network diagram | Network policy
+1. Pod scheduling - |
+1. Quotas&Limit - |
+
+### [III. CI/CD Design](./docs/openshift-design/cicd-design.md)
+1. Overview
+1. CI-Tekton Pipeline Design
+1. CD-Argo CD Setting
+
+
+## Screenshots
+
+![Topology](./docs/images/screenshot-topology.png)
+![Pod](./docs/images/screenshot-pod.png)
+![Pipeline](./docs/images/screenshot-pipeline.png)
+![GitOps](./docs/images/screenshot-argo-1.png)
+![GitOps](./docs/images/screenshot-argo-2.png)
 
 
 ## Repository structure
@@ -94,72 +94,4 @@ This reference architecture is composed of several GitHub repository.
   * XX-API
   * YY-API1
   * Worker
-```
-
-
-## Screenshots
-
-![Topology](./docs/images/screenshot-topology.png)
-![Pod](./docs/images/screenshot-pod.png)
-![Pipeline](./docs/images/screenshot-pipeline.png)
-![GitOps](./docs/images/screenshot-argo-1.png)
-![GitOps](./docs/images/screenshot-argo-2.png)
-
-
-
-
-
-## Setup your CRC (CodeReady Container)
-
-* Login
-```
-oc login -u developer https://api.crc.testing:6443
-https://console-openshift-console.apps-crc.testing
-```
-
-* Create Project
-```
-oc apply -f projects.yaml
-```
-
-*  Install Operator (to all namespaces /Tekton&ArgoCD)
-    - ※It looks this command didn't work. We should install with the console rather.
-```
-$ oc apply -f operator.yaml
-subscription.operators.coreos.com/openshift-pipelines-operator created
-```
-
-[Installing the Red Hat OpenShift Pipelines Operator in web console](https://docs.openshift.com/container-platform/4.7/cicd/pipelines/installing-pipelines.html)
-
-## 
-
-
-# Reference
-https://github.com/openshift/pipelines-tutorial#install-openshift-pipelines
-
-# Memo
-* I found SCC error https://githubmemory.com/repo/redhat-scholars/tekton-tutorial/issues/47
-    - `oc adm policy add-scc-to-user privileged -ntektontutorial -z pipeline`
-    - `oc adm policy add-scc-to-user privileged -nmy-first-openshift -z pipeline`
-
-* test TEKTON task
-`tkn task start -n my-first-openshift build-app --showlog`
-
-# TODO
-* TEKTON: Service accountの権限を絞る
-
-
-# MEMO
-* ArgoCDのログイン admin
-```
-kubectl -n openshift-gitops get secret openshift-gitops-cluster -o 'go-template={{index .data "admin.password"}}' | base64 -d
-```
-
-
-# Mongo Install
-```
-kubectl -n openshift-operators \
-  create secret generic mongo-enterprise \
-  --from-literal="publicKey=crigsydx" \
-  --from-literal="privateKey=b75ac604-fbf2-49f7-aed6-1543adcef9a2"
 ```

@@ -62,18 +62,18 @@ This sample is an architectural design for a library management system.
 ![Sample - Library management system](./docs/images/library-management-system.png)
 
 ### [I. Architecture Design](./docs/openshift-design/architecture-design.md)
-1. Architectually Signicant Requirement
-1. Logical architecture diagram
+[1. Architectually Signicant Requirement](./docs/openshift-design/architecture-design.md)
+[1. Logical architecture diagram](./docs/openshift-design/architecture-design.md)
 1. (WIP)-Design points
 1. (WIP)-Physical architecture diagram
 
 
 ### [II. Detail Design](./docs/openshift-design/detail-design.md)
-1. Projects(Namespace)
-1. Security - | RBAC | Service account
-1. Network - | Network diagram | Network policy
-1. Pod scheduling - |
-1. Quotas&Limit - |
+1. [Projects(Namespace)](./docs/openshift-design/detail-design.md)
+1. [Security - | RBAC | Service account](./docs/openshift-design/detail-design.md)
+1. [Network - | Network diagram | Network policy](./docs/openshift-design/detail-design.md)
+1. [Pod scheduling - |](./docs/openshift-design/detail-design.md)
+1. [Quotas&Limit - |](./docs/openshift-design/detail-design.md)
 
 ### [III. CI/CD Design](./docs/openshift-design/cicd-design.md)
 1. [Overview](./docs/openshift-design/cicd-design.md#1-overview)

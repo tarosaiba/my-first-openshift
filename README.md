@@ -1,6 +1,6 @@
-# My first OpensShift (OpenShift Reference Architecture)
+# My first OpensShift (OpenShift Sample Architecture)
 
-The My first OpenShift is a OpenShift reference architecture. This provides a set of manifest files for deploying microservices to OpenShift cluster with devops tools.
+The My first OpenShift is a OpenShift sample architecture. This provides a set of manifest files for deploying microservices to OpenShift cluster with devops tools.
 You can deploy with only few steps with `init.sh` script.
 
 ## Requirements
@@ -50,6 +50,13 @@ Key tech stacks are:
 
 ## Design documents (with lots of diagrams!😃)
 
+This sample is an architectural design for a library management system.
+* Book inventory management
+* Book review
+* Book arrival notification
+
+![Sample - Library management system](./docs/images/library-management-system.png)
+
 ### [I. Architecture Design](./test)
 1. (WIP)-Requirements
 1. (WIP)-Design points
@@ -79,7 +86,7 @@ Key tech stacks are:
 
 
 ## Repository structure
-This reference architecture is composed of several GitHub repository.
+This sample architecture is composed of several GitHub repository.
 
 ```
 # My First OpenShift

@@ -67,6 +67,7 @@ This sample is an architectural design for a library management system.
 1. (WIP)-Design points
 1. (WIP)-Physical architecture diagram
 
+
 ### [II. Detail Design](./docs/openshift-design/detail-design.md)
 1. Projects(Namespace)
 1. Security - | RBAC | Service account
@@ -75,7 +76,7 @@ This sample is an architectural design for a library management system.
 1. Quotas&Limit - |
 
 ### [III. CI/CD Design](./docs/openshift-design/cicd-design.md)
-1. Overview
+1. [Overview](./docs/openshift-design/cicd-design.md#1-overview)
 1. CI-Tekton Pipeline Design
 1. CD-Argo CD Setting
 

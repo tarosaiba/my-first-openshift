@@ -15,6 +15,8 @@ You can deploy with only few steps with `init.sh` script.
 
 ## Overview
 
+This is an overview of the sample architecture.
+
 ![Overview](./docs/images/overview.png)
 
 Key tech stacks are:
@@ -46,6 +48,8 @@ Key tech stacks are:
 
 ### Resources
 
+OpenShift and kubernetes resources are deployed as follows.
+
 ![Resources](./docs/images/resources.png)
 
 ## Design documents (with lots of diagrams!😃)
@@ -57,10 +61,10 @@ This sample is an architectural design for a library management system.
 
 ![Sample - Library management system](./docs/images/library-management-system.png)
 
-### [I. Architecture Design](./test)
-1. (WIP)-Requirements
+### [I. Architecture Design](./openshift-design/architecture-design.md)
+1. Architectually Signicant Requirement
+1. Logical architecture diagram
 1. (WIP)-Design points
-1. (WIP)-Logical architecture diagram
 1. (WIP)-Physical architecture diagram
 
 ### [II. Detail Design](./docs/openshift-design/detail-design.md)

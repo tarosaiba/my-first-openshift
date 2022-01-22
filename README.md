@@ -77,8 +77,8 @@ This sample is an architectural design for a library management system.
 
 ### [III. CI/CD Design](./docs/openshift-design/cicd-design.md)
 1. [Overview](./docs/openshift-design/cicd-design.md#1-overview)
-1. CI-Tekton Pipeline Design
-1. CD-Argo CD Setting
+1. [CI-Tekton Pipeline Design](./docs/openshift-design/cicd-design.md#2-ci-tekton-pipeline-design)
+1. [CD-Argo CD Setting](./docs/openshift-design/cicd-design.md#3-cd-argo-cd-setting)
 
 
 ## Screenshots

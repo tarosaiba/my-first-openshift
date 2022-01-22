@@ -61,7 +61,7 @@ This sample is an architectural design for a library management system.
 
 ![Sample - Library management system](./docs/images/library-management-system.png)
 
-### [I. Architecture Design](./openshift-design/architecture-design.md)
+### [I. Architecture Design](./docs/openshift-design/architecture-design.md)
 1. Architectually Signicant Requirement
 1. Logical architecture diagram
 1. (WIP)-Design points

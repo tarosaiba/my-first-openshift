@@ -1,6 +1,6 @@
-# My first OpensShift (OpenShift Reference Architecture)
+# My first OpensShift (OpenShift Sample Architecture)
 
-The My first OpenShift is a OpenShift reference architecture. This provides a set of manifest files for deploying microservices to OpenShift cluster with devops tools.
+The My first OpenShift is a OpenShift sample architecture. This provides a set of manifest files for deploying microservices to OpenShift cluster with devops tools.
 You can deploy with only few steps with `init.sh` script.
 
 ## Requirements
@@ -14,6 +14,8 @@ You can deploy with only few steps with `init.sh` script.
 * Run this command `./init.sh`
 
 ## Overview
+
+This is an overview of the sample architecture.
 
 ![Overview](./docs/images/overview.png)
 
@@ -46,27 +48,37 @@ Key tech stacks are:
 
 ### Resources
 
+OpenShift and kubernetes resources are deployed as follows.
+
 ![Resources](./docs/images/resources.png)
 
 ## Design documents (with lots of diagrams!😃)
 
-### [I. Architecture Design](./test)
-1. (WIP)-Requirements
+This sample is an architectural design for a library management system.
+* Book inventory management
+* Book review
+* Book arrival notification
+
+![Sample - Library management system](./docs/images/library-management-system.png)
+
+### [I. Architecture Design](./docs/openshift-design/architecture-design.md)
+[1. Architectually Signicant Requirement](./docs/openshift-design/architecture-design.md)
+[1. Logical architecture diagram](./docs/openshift-design/architecture-design.md)
 1. (WIP)-Design points
-1. (WIP)-Logical architecture diagram
 1. (WIP)-Physical architecture diagram
 
+
 ### [II. Detail Design](./docs/openshift-design/detail-design.md)
-1. Projects(Namespace)
-1. Security - | RBAC | Service account
-1. Network - | Network diagram | Network policy
-1. Pod scheduling - |
-1. Quotas&Limit - |
+1. [Projects(Namespace)](./docs/openshift-design/detail-design.md)
+1. [Security - | RBAC | Service account](./docs/openshift-design/detail-design.md)
+1. [Network - | Network diagram | Network policy](./docs/openshift-design/detail-design.md)
+1. [Pod scheduling - |](./docs/openshift-design/detail-design.md)
+1. [Quotas&Limit - |](./docs/openshift-design/detail-design.md)
 
 ### [III. CI/CD Design](./docs/openshift-design/cicd-design.md)
-1. Overview
-1. CI-Tekton Pipeline Design
-1. CD-Argo CD Setting
+1. [Overview](./docs/openshift-design/cicd-design.md#1-overview)
+1. [CI-Tekton Pipeline Design](./docs/openshift-design/cicd-design.md#2-ci-tekton-pipeline-design)
+1. [CD-Argo CD Setting](./docs/openshift-design/cicd-design.md#3-cd-argo-cd-setting)
 
 
 ## Screenshots
@@ -79,7 +91,7 @@ Key tech stacks are:
 
 
 ## Repository structure
-This reference architecture is composed of several GitHub repository.
+This sample architecture is composed of several GitHub repository.
 
 ```
 # My First OpenShift

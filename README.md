@@ -3,9 +3,11 @@
 The My first OpenShift is a OpenShift sample architecture. This provides a set of manifest files for deploying microservices to OpenShift cluster with devops tools.
 You can deploy with only few steps with `init.sh` script.
 
+⚠️  NOTICE: Most of this sample architecture and documents are still a work in progress.
+
 ## Requirements
 * OpenShift >= 4.x
-* oc client >= x.x
+* oc client >= 4.x
 
 ## Quick Start
 
@@ -62,8 +64,9 @@ This sample is an architectural design for a library management system.
 ![Sample - Library management system](./docs/images/library-management-system.png)
 
 ### [I. Architecture Design](./docs/openshift-design/architecture-design.md)
-[1. Architectually Signicant Requirement](./docs/openshift-design/architecture-design.md)
-[1. Logical architecture diagram](./docs/openshift-design/architecture-design.md)
+
+1. [Architectually Signicant Requirement](./docs/openshift-design/architecture-design.md)
+1. [Logical architecture diagram](./docs/openshift-design/architecture-design.md)
 1. (WIP)-Design points
 1. (WIP)-Physical architecture diagram
 
@@ -88,22 +91,3 @@ This sample is an architectural design for a library management system.
 ![Pipeline](./docs/images/screenshot-pipeline.png)
 ![GitOps](./docs/images/screenshot-argo-1.png)
 ![GitOps](./docs/images/screenshot-argo-2.png)
-
-
-## Repository structure
-This sample architecture is composed of several GitHub repository.
-
-```
-# My First OpenShift
-  -- Infrastructure
-  * my-first-openshift ★This repository
-    + Initial setup commands
-    + OpenShift resource definitions (manifests files)
-    + OpenShift Operator definitions (manifests files)
-    + CI/CD setting (Tekton/ArgoCD)
-
-  -- Applications (Sourcecode only)
-  * XX-API
-  * YY-API1
-  * Worker
-```

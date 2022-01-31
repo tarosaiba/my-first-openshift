@@ -5,39 +5,39 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: service-a
+  name: book-inventory
   labels:
-    app: service-a
+    app: book-inventory
     role: backend
-    service: service-a
+    service: book-inventory
 spec:
   ports:
   - port: 8080
     name: http
   selector:
-    app: service-a
+    app: book-inventory
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: service-a
+  name: book-inventory
   labels:
-    app: service-a
+    app: book-inventory
     role: backend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: service-a
+      app: book-inventory
   template:
     metadata:
       labels:
-        app: service-a
+        app: book-inventory
         role: backend
     spec:
       containers:
-      - name: service-a
-        image: image-registry.openshift-image-registry.svc:5000/my-first-openshift-common/service-a:master
+      - name: book-inventory
+        image: image-registry.openshift-image-registry.svc:5000/my-first-openshift-common/book-inventory:master
         ports:
         - containerPort: 8080
         env:
@@ -50,7 +50,7 @@ spec:
         - name: PG_PORT
           value: "5432"
         - name: PG_DB
-          value: "service-a"
+          value: "book-inventory"
         - name: PG_USER
           value: "user-a"
         - name: PG_PASSWORD

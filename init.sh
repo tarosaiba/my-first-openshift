@@ -18,8 +18,8 @@ oc create -f logging
 
 # Run Pipelines
 SUFFIX=`date +"%y%m%d-%H-%M-%S"`
-## service-a
-service="service-a"
+## book-inventory
+service="book-inventory"
 echo "apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:
@@ -53,10 +53,10 @@ spec:
   timeout: 1h0m0s
 " | oc create -f -
 
-## service-b
+## book-review
 SUFFIX=`date +"%y%m%d-%H-%M-%S"`
-## service-b
-service="service-b"
+## book-review
+service="book-review"
 echo "apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:

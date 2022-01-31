@@ -7,8 +7,8 @@ commonLabels:
 namespace: my-first-openshift-prod
 
 images:
-  - name: image-registry.openshift-image-registry.svc:5000/my-first-openshift-common/service-a:latest
-    newName: image-registry.openshift-image-registry.svc:5000/my-first-openshift-common/service-a
+  - name: image-registry.openshift-image-registry.svc:5000/my-first-openshift-common/book-inventory:latest
+    newName: image-registry.openshift-image-registry.svc:5000/my-first-openshift-common/book-inventory
     newTag: latest
   - name: nginx:1.14.2
     newName: nginx
@@ -18,6 +18,6 @@ resources:
 - ../../base
 
 patchesStrategicMerge:
-- service-a.yaml
+- book-inventory.yaml
 - web.yaml
 - postgres.yaml

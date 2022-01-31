@@ -5,39 +5,39 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: service-b
+  name: book-review
   labels:
-    app: service-b
+    app: book-review
     role: backend
-    service: service-b
+    service: book-review
 spec:
   ports:
   - port: 8080
     name: http
   selector:
-    app: service-b
+    app: book-review
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: service-b
+  name: book-review
   labels:
-    app: service-b
+    app: book-review
     role: backend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: service-b
+      app: book-review
   template:
     metadata:
       labels:
-        app: service-b
+        app: book-review
         role: backend
     spec:
       containers:
-      - name: service-b
-        image: image-registry.openshift-image-registry.svc:5000/my-first-openshift-common/service-b:master
+      - name: book-review
+        image: image-registry.openshift-image-registry.svc:5000/my-first-openshift-common/book-review:master
         ports:
         - containerPort: 8080
         env:

@@ -1,55 +1,61 @@
 ##################################################################################################
-# My Service B
+# My Service A
 ##################################################################################################
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: service-b
+  name: book-inventory
   labels:
-    app: service-b
+    app: book-inventory
     role: backend
-    service: service-b
+    service: book-inventory
 spec:
   ports:
   - port: 8080
     name: http
   selector:
-    app: service-b
+    app: book-inventory
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: service-b
+  name: book-inventory
   labels:
-    app: service-b
+    app: book-inventory
     role: backend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: service-b
+      app: book-inventory
   template:
     metadata:
       labels:
-        app: service-b
+        app: book-inventory
         role: backend
     spec:
       containers:
-      - name: service-b
-        image: image-registry.openshift-image-registry.svc:5000/my-first-openshift-common/service-b:master
+      - name: book-inventory
+        image: image-registry.openshift-image-registry.svc:5000/my-first-openshift-common/book-inventory:master
         ports:
         - containerPort: 8080
         env:
-        - name: DB_HOST
-          value: "mongo"
-        - name: DB_NAME
-          value: "bezkoder_db"
-        - name: DB_USER
-          value: "root"
-        - name: DB_PASSWORD
+        - name: GOCACHE
+          value: "/tmp"
+        - name: PORT
+          value: "8080"
+        - name: PG_HOST
+          value: "postgres"
+        - name: PG_PORT
+          value: "5432"
+        - name: PG_DB
+          value: "book-inventory"
+        - name: PG_USER
+          value: "user-a"
+        - name: PG_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: mongo
+              name: postgres
               key: database-password
       serviceAccountName: privileged-app

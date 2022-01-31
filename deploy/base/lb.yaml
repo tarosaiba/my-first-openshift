@@ -3,12 +3,12 @@ apiVersion: route.openshift.io/v1
 metadata:
   name: lb-api
   labels:
-    app: service-a
-    service: service-a
+    app: book-inventory
+    service: book-inventory
 spec:
   to:
     kind: Service
-    name: service-a
+    name: book-inventory
     weight: 100
   port:
     targetPort: http
@@ -20,12 +20,12 @@ apiVersion: route.openshift.io/v1
 metadata:
   name: lb-api-b
   labels:
-    app: service-b
-    service: service-b
+    app: book-review
+    service: book-review
 spec:
   to:
     kind: Service
-    name: service-b
+    name: book-review
     weight: 100
   port:
     targetPort: http

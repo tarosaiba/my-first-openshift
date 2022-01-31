@@ -1,61 +1,55 @@
 ##################################################################################################
-# My Service A
+# My Service B
 ##################################################################################################
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: service-a
+  name: book-review
   labels:
-    app: service-a
+    app: book-review
     role: backend
-    service: service-a
+    service: book-review
 spec:
   ports:
   - port: 8080
     name: http
   selector:
-    app: service-a
+    app: book-review
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: service-a
+  name: book-review
   labels:
-    app: service-a
+    app: book-review
     role: backend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: service-a
+      app: book-review
   template:
     metadata:
       labels:
-        app: service-a
+        app: book-review
         role: backend
     spec:
       containers:
-      - name: service-a
-        image: image-registry.openshift-image-registry.svc:5000/my-first-openshift-common/service-a:master
+      - name: book-review
+        image: image-registry.openshift-image-registry.svc:5000/my-first-openshift-common/book-review:master
         ports:
         - containerPort: 8080
         env:
-        - name: GOCACHE
-          value: "/tmp"
-        - name: PORT
-          value: "8080"
-        - name: PG_HOST
-          value: "postgres"
-        - name: PG_PORT
-          value: "5432"
-        - name: PG_DB
-          value: "service-a"
-        - name: PG_USER
-          value: "user-a"
-        - name: PG_PASSWORD
+        - name: DB_HOST
+          value: "mongo"
+        - name: DB_NAME
+          value: "bezkoder_db"
+        - name: DB_USER
+          value: "root"
+        - name: DB_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: postgres
+              name: mongo
               key: database-password
       serviceAccountName: privileged-app

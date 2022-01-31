@@ -5,9 +5,9 @@ resources:
   - sa.yaml
   - network-policy.yaml
   - lb.yaml
-  - service-a.yaml
+  - book-inventory.yaml
   - postgres.yaml
-  - service-b.yaml
+  - book-review.yaml
   - mongo.yaml
   - web.yaml
   - loadtest.yaml

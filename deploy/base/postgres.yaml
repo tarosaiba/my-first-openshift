@@ -62,7 +62,7 @@ spec:
           protocol: TCP
         env:
         - name: POSTGRES_DB
-          value: service-a
+          value: book-inventory
         - name: POSTGRES_USER
           value: user-a
         - name: POSTGRES_PASSWORD

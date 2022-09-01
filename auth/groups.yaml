@@ -4,9 +4,7 @@ kind: Group
 metadata:
   name: administrator
 users:
-  - admin
-  - shuntaro
-  - tony
+  - ssaiba
 
 ---
 apiVersion: user.openshift.io/v1

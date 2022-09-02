@@ -14,12 +14,11 @@ sleep 180
 
 oc create -f tekton
 oc create -f argo
-oc create -f logging
 
 # Run Pipelines
 SUFFIX=`date +"%y%m%d-%H-%M-%S"`
-## book-inventory
-service="book-inventory"
+## service-a
+service="service-a"
 echo "apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:
@@ -55,8 +54,8 @@ spec:
 
 ## book-review
 SUFFIX=`date +"%y%m%d-%H-%M-%S"`
-## book-review
-service="book-review"
+## service-b
+service="service-b"
 echo "apiVersion: tekton.dev/v1beta1
 kind: PipelineRun
 metadata:

@@ -41,7 +41,7 @@ spec:
     kustomize:
     path: deploy/overlays/stg
     repoURL: https://github.com/tarosaiba/my-first-openshift.git
-    targetRevision: master
+    targetRevision: gemstone
   syncPolicy:
     automated:
       prune: true
@@ -67,7 +67,7 @@ spec:
     kustomize:
     path: deploy/overlays/prod
     repoURL: https://github.com/tarosaiba/my-first-openshift.git
-    targetRevision: master
+    targetRevision: gemstone
   syncPolicy:
     automated:
       prune: true

@@ -15,7 +15,7 @@ spec:
     kustomize:
     path: deploy/overlays/dev
     repoURL: https://github.com/tarosaiba/my-first-openshift.git
-    targetRevision: develop
+    targetRevision: gemstone
   syncPolicy:
     automated:
       prune: true
